@@ -6,29 +6,32 @@ struct ContentView: View {
 //    @StateObject private var userManager = UserManager()
     
 
-//    @State private var isLoggedIn = false
-    @State private var isLoggedIn = true
+    @State private var isLoggedIn = false
+//    @State private var isLoggedIn = true
 
     var body: some View {
    
             Group {
                 if isLoggedIn {
                     TabView {
-                        NavigationStack {
+//                        NavigationStack {
+                        NavigationView {
                             SessionsListView()
                         }
                         .tabItem {
                             Label("Sessions", systemImage: "list.bullet")
                         }
                         
-                        NavigationStack {
+//                        NavigationStack {
+                        NavigationView {
                             FavoritesListView()
                         }
                         .tabItem {
                             Label("Favorites", systemImage: "heart.fill")
                         }
                         
-                        NavigationStack {
+//                        NavigationStack {
+                        NavigationView {
                             Button("Log Out") {
                                 
                                 

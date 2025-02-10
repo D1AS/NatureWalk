@@ -10,8 +10,19 @@ import SwiftUI
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
     
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button("Login") {
+            isLoggedIn = true
+        }
+        .padding()
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+            
+        
     }
 }
 
