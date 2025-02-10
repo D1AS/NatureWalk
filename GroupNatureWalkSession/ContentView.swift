@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var sessionStore = LoadSession()
-//    @StateObject private var favoritesManager = FavoritesManager()
+    @StateObject private var favoritesManager = FavoritesManager()
 //    @StateObject private var userManager = UserManager()
     
 
@@ -49,7 +49,7 @@ struct ContentView: View {
                 
             }
         .environmentObject(sessionStore)
-//        .environmentObject(favoritesManager)
+        .environmentObject(favoritesManager)
 //        .environmentObject(userManager)
         
     }

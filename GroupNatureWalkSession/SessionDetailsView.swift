@@ -3,7 +3,7 @@ import SwiftUI
 struct SessionDetailsView: View {
     let session: NatureWalkSession
     
-//    @EnvironmentObject var favoritesManager: FavoritesManager
+    @EnvironmentObject var favoritesManager: FavoritesManager
     
     var body: some View {
         
@@ -55,15 +55,12 @@ struct SessionDetailsView: View {
                     
                     HStack {
                         Button(action: {
-                            
-                            //TODO:
-                            //Functionality to mark a favourite session
-                            //favoritesManager.toggleFavorite(session)
+                            favoritesManager.toggleFavorite(session: session)
                         }) {
-                            Image(systemName: true ? "heart.fill" : "heart")
-                            //                        Image(systemName: favoritesManager.isFavorite(session) ? "heart.fill" : "heart")
-                            //                        Text("Favorite")
-                        }
+                            Image(systemName: favoritesManager.isFavorite(session: session) ? "heart.fill" : "heart")
+                                .foregroundColor(.red)
+                        }// favorite button
+
                         
                         Spacer()
                         

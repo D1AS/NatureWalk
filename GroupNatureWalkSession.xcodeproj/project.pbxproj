@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BFF88052D59793D00C4C3D9 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF88042D59793100C4C3D9 /* FavoritesManager.swift */; };
+		7BFF88162D597E1400C4C3D9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF88152D597E0F00C4C3D9 /* UserManager.swift */; };
 		D111395D2D55157C0065F33A /* GroupNatureWalkSessionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D111395C2D55157C0065F33A /* GroupNatureWalkSessionApp.swift */; };
 		D111395F2D55157C0065F33A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D111395E2D55157C0065F33A /* ContentView.swift */; };
 		D11139612D55157E0065F33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11139602D55157E0065F33A /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BFF88042D59793100C4C3D9 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		7BFF88152D597E0F00C4C3D9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D11139592D55157C0065F33A /* GroupNatureWalkSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupNatureWalkSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D111395C2D55157C0065F33A /* GroupNatureWalkSessionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNatureWalkSessionApp.swift; sourceTree = "<group>"; };
 		D111395E2D55157C0065F33A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 				D111396E2D5520270065F33A /* LoadSession.swift */,
 				D11139702D5521210065F33A /* SessionsListView.swift */,
 				D11139722D5521520065F33A /* SessionDetailsView.swift */,
+				7BFF88152D597E0F00C4C3D9 /* UserManager.swift */,
 				D11139762D5566BE0065F33A /* FavoritesListView.swift */,
+				7BFF88042D59793100C4C3D9 /* FavoritesManager.swift */,
 				D11139782D5567370065F33A /* LoginView.swift */,
 			);
 			path = GroupNatureWalkSession;
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D111396F2D5520270065F33A /* LoadSession.swift in Sources */,
+				7BFF88052D59793D00C4C3D9 /* FavoritesManager.swift in Sources */,
 				D11139712D5521210065F33A /* SessionsListView.swift in Sources */,
 				D11139732D5521520065F33A /* SessionDetailsView.swift in Sources */,
 				D111396D2D551E550065F33A /* NatureWalkSessions.swift in Sources */,
@@ -166,6 +173,7 @@
 				D111396B2D5518B70065F33A /* NatureWalkSession.swift in Sources */,
 				D111395D2D55157C0065F33A /* GroupNatureWalkSessionApp.swift in Sources */,
 				D11139792D5567370065F33A /* LoginView.swift in Sources */,
+				7BFF88162D597E1400C4C3D9 /* UserManager.swift in Sources */,
 				D11139772D5566BE0065F33A /* FavoritesListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
