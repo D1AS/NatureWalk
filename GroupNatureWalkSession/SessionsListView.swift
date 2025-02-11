@@ -49,11 +49,15 @@ struct SessionRowView: View {
     
     var body: some View {
         HStack {
-            Image(session.photos[0])
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
+            AsyncImage(url: URL(string: session.photos[0] )) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+            } placeholder: {
+                ProgressView()
+            }
             
             VStack(alignment: .leading) {
                 Text(session.name)
@@ -64,7 +68,6 @@ struct SessionRowView: View {
             }
 
             Spacer()
-
         }
         .padding(.vertical, 8)
     }

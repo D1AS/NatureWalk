@@ -14,10 +14,22 @@ struct SessionDetailsView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     
                     TabView {
-                        ForEach(session.photos, id: \.self) { photo in
-                            Image(photo)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
+                        ForEach(session.photos, id: \.self) { photoURL in
+                            AsyncImage(url: URL(string: photoURL)) { phase in
+                                switch phase {
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(height: 280)
+                                        .clipped()
+                                default:
+                                    Image(systemName: "photo.circle.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 280, height: 280)
+                                }
+                            }
                         }
                     }
                     .frame(height: 280)

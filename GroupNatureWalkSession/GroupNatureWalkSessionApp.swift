@@ -1,10 +1,3 @@
-//
-//  GroupNatureWalkSessionApp.swift
-//  GroupNatureWalkSession
-//
-//  Created by rg on 2/6/25.
-//
-
 import SwiftUI
 
 @main
