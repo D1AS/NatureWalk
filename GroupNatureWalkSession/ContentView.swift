@@ -3,18 +3,15 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var sessionStore = LoadSession()
     @StateObject private var favoritesManager = FavoritesManager()
-//    @StateObject private var userManager = UserManager()
     
 
     @State private var isLoggedIn = false
-//    @State private var isLoggedIn = true
 
     var body: some View {
    
             Group {
                 if isLoggedIn {
                     TabView {
-//                        NavigationStack {
                         NavigationView {
                             SessionsListView()
                         }
@@ -22,7 +19,6 @@ struct ContentView: View {
                             Label("Sessions", systemImage: "list.bullet")
                         }
                         
-//                        NavigationStack {
                         NavigationView {
                             FavoritesListView()
                         }
@@ -30,7 +26,6 @@ struct ContentView: View {
                             Label("Favorites", systemImage: "heart.fill")
                         }
                         
-//                        NavigationStack {
                         NavigationView {
                             Button("Log Out") {
                                 
@@ -53,7 +48,6 @@ struct ContentView: View {
             }
         .environmentObject(sessionStore)
         .environmentObject(favoritesManager)
-//        .environmentObject(userManager)
         
     }
 }
