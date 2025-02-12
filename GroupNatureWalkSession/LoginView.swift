@@ -9,9 +9,9 @@ struct LoginView: View {
 
     // List of valid usernames and passwords
     private let validUsers: [String: String] = [
-        "admin": "111111",
-        "user1": "111111",
-        "user2": "111111"
+        "admin@apple.com": "111111",
+        "user1@apple.com": "111111",
+        "user2@apple.com": "111111"
     ]
 
     var body: some View {
