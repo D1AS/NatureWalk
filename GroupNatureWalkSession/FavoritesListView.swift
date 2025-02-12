@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FavoritesListView: View {
     @EnvironmentObject var favoritesManager: FavoritesManager
+     var username: String
     
     var body: some View {
         NavigationStack {
