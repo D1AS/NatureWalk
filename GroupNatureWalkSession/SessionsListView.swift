@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SessionsListView: View {
     @EnvironmentObject var sessionStore: LoadSession
+     var username: String
 
     var body: some View {
 
