@@ -1,17 +1,28 @@
+//
+//  LoginView.swift
+//  NatureWalkApp
+//
+//  Created by Wayne Wang on 2025/2/10.
+//
+
+
+import SwiftUI
+
 import SwiftUI
 
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
-    @State private var username: String = UserDefaults.standard.string(forKey: "savedUsername") ?? ""
-    @State private var password: String = UserDefaults.standard.string(forKey: "savedPassword") ?? ""
+    @Binding var username: String
+
+    @State private var password: String = ""
     @State private var rememberMe: Bool = UserDefaults.standard.bool(forKey: "rememberMe")
     @State private var errorMessage: String?
 
     // List of valid usernames and passwords
     private let validUsers: [String: String] = [
         "admin@apple.com": "111111",
-        "user1@apple.com": "111111",
-        "user2@apple.com": "111111"
+        "user01@apple.com": "111111",
+        "user02@apple.com": "111111"
     ]
 
     var body: some View {
@@ -65,5 +76,12 @@ struct LoginView: View {
             .padding()
         }
         .padding()
+        .onAppear {
+            // Load the saved username if "Remember Me" was checked
+            if rememberMe {
+                username = UserDefaults.standard.string(forKey: "savedUsername") ?? ""
+                password = UserDefaults.standard.string(forKey: "savedPassword") ?? ""
+            }
+        }
     }
 }
