@@ -72,7 +72,7 @@ struct SessionDetailsView: View {
                             Image(systemName: favoritesManager.isFavorite(session: session) ? "heart.fill" : "heart")
                                 .foregroundColor(.red)
                         }// favorite button
-
+                        
                         
                         Spacer()
                         
@@ -91,10 +91,10 @@ struct SessionDetailsView: View {
             .navigationTitle(session.name)
             .navigationBarTitleDisplayMode(.inline)
         }
-        }
-
+    }
+    
     func callHost() {
-        let phoneNumber = session.phoneNumber.filter { "0123456789".contains($0) } // Keep only numeric characters
+        let phoneNumber = session.phoneNumber.filter { "0123456789".contains($0) }
         if let url = URL(string: "tel://\(phoneNumber)"),
            UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -102,3 +102,4 @@ struct SessionDetailsView: View {
             print("Unable to open phone dialer")
         }
     }
+}
