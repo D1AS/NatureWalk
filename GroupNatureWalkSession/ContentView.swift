@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var sessionStore = LoadSession()
+    @StateObject private var sessionStore = NatureWalkSessions()
     @StateObject private var favoritesManager = FavoritesManager()
     
     @State private var isLoggedIn = false
@@ -42,7 +42,7 @@ struct ContentView: View {
                 LoginView(isLoggedIn: $isLoggedIn, username: $username)
             }
         }
-        .environmentObject(sessionStore)  // Moved out of the Group
+        .environmentObject(sessionStore)
         .environmentObject(favoritesManager)
     }
 }

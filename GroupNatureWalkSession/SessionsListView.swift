@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SessionsListView: View {
-    @EnvironmentObject var sessionStore: LoadSession
+    @EnvironmentObject var sessionStore: NatureWalkSessions
      var username: String
 
     var body: some View {
