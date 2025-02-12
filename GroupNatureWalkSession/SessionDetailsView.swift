@@ -92,29 +92,13 @@ struct SessionDetailsView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         }
-    
+
     func callHost() {
-        let phoneNumber = session.phoneNumber.replacingOccurrences(of: " ", with: "")
+        let phoneNumber = session.phoneNumber.filter { "0123456789".contains($0) } // Keep only numeric characters
         if let url = URL(string: "tel://\(phoneNumber)"),
            UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            print("Unable to open phone dialer")
         }
     }
-}
-
-
-//struct SessionDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            SessionDetailsView(session: NatureWalkSession(
-//                name: "Forest Adventure",
-//                description: "Explore the lush forest trails and discover hidden wonders of nature.",
-//                starRating: 4.5,
-//                hostName: "Green Trails Co.",
-//                phoneNumber: "123-456-7890",
-//                photos: ["forest1", "forest2"],
-//                pricePerPerson: 25.0
-//            ))
-//        }
-//    }
-//}
