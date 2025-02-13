@@ -38,12 +38,12 @@ struct FavoritesListView: View {
         }
     }
     
-    /// Remove um favorito da lista
+    //Removes a favorite from the list
     func removeFavorite(at offsets: IndexSet) {
         favoritesManager.favoriteSessions.remove(atOffsets: offsets)
     }
     
-    /// Remove todos os favoritos
+    //Removes all favorites
     func removeAllFavorites() {
         favoritesManager.removeAllFavorites()
     }

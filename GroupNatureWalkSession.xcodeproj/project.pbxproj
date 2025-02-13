@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BF5DA602D5D6D0E0079E91A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5DA5F2D5D6D0A0079E91A /* User.swift */; };
 		7BFF88052D59793D00C4C3D9 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF88042D59793100C4C3D9 /* FavoritesManager.swift */; };
 		7BFF88162D597E1400C4C3D9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF88152D597E0F00C4C3D9 /* UserManager.swift */; };
 		D111395D2D55157C0065F33A /* GroupNatureWalkSessionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D111395C2D55157C0065F33A /* GroupNatureWalkSessionApp.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BF5DA5F2D5D6D0A0079E91A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BFF88042D59793100C4C3D9 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		7BFF88152D597E0F00C4C3D9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D11139592D55157C0065F33A /* GroupNatureWalkSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupNatureWalkSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				D11139702D5521210065F33A /* SessionsListView.swift */,
 				D11139722D5521520065F33A /* SessionDetailsView.swift */,
 				7BFF88152D597E0F00C4C3D9 /* UserManager.swift */,
+				7BF5DA5F2D5D6D0A0079E91A /* User.swift */,
 				D11139762D5566BE0065F33A /* FavoritesListView.swift */,
 				7BFF88042D59793100C4C3D9 /* FavoritesManager.swift */,
 				D11139782D5567370065F33A /* LoginView.swift */,
@@ -171,6 +174,7 @@
 				D11139792D5567370065F33A /* LoginView.swift in Sources */,
 				7BFF88162D597E1400C4C3D9 /* UserManager.swift in Sources */,
 				D11139772D5566BE0065F33A /* FavoritesListView.swift in Sources */,
+				7BF5DA602D5D6D0E0079E91A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GroupNatureWalkSession/Preview Content\"";
-				DEVELOPMENT_TEAM = 98A6873RU3;
+				DEVELOPMENT_TEAM = 4RFWMHJ26M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -313,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gp.GroupNatureWalkSession;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hm.GroupNatureWalkSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -329,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GroupNatureWalkSession/Preview Content\"";
-				DEVELOPMENT_TEAM = 98A6873RU3;
+				DEVELOPMENT_TEAM = 4RFWMHJ26M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -343,7 +347,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gp.GroupNatureWalkSession;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hm.GroupNatureWalkSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

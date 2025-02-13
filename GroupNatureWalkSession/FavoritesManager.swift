@@ -1,62 +1,77 @@
-//
-//  FavoritesManager.swift
-//  GroupNatureWalkSession
-//
-//  Created by Henrique Machitte on 09/02/25.
-//
-
 import Foundation
 
 class FavoritesManager: ObservableObject {
     @Published var favoriteSessions: [NatureWalkSession] = []
-    
-    private let favoritesKey = "favoriteSessions"
+    private var username: String = ""
 
-        init() {
-            loadFavorites()
-        }
-    
-    /// Alterna o estado de favorito de uma sessão
+    // Updates the user and loads their favorites
+    func setUser(_ username: String) {
+        self.username = username
+        print("Loading favorites for user: \(username)")
+        loadFavorites()
+    }
+
+    // Toggles the favorite state of a session
     func toggleFavorite(session: NatureWalkSession) {
         if let index = favoriteSessions.firstIndex(where: { $0.id == session.id }) {
-            // Se já está favoritado, remove
+            print("Removing session from favorites: \(session.name)")
             favoriteSessions.remove(at: index)
         } else {
-            // Se não está favoritado, adiciona
+            print("Adding session to favorites: \(session.name)")
             favoriteSessions.append(session)
         }
-        saveFavorites() // Chamar manualmente o salvamento
+        saveFavorites()
     }
-    
-    /// Verifica se uma sessão está nos favoritos
+
+    // Checks if a session is a favorite
     func isFavorite(session: NatureWalkSession) -> Bool {
         return favoriteSessions.contains { $0.id == session.id }
     }
-    
-    /// Remove todos os favoritos
-    func removeAllFavorites() {
-        favoriteSessions.removeAll()
-        saveFavorites() // Salvar após limpar
-    }
-    
-    /// Salva os favoritos no UserDefaults
-        func saveFavorites() {
-            do {
-                let encoded = try JSONEncoder().encode(favoriteSessions)
-                UserDefaults.standard.set(encoded, forKey: favoritesKey)
-            } catch {
-                print("Erro ao salvar favoritos: \(error)")
-            }
-        }
 
-        /// Carrega os favoritos do UserDefaults (
-        func loadFavorites() {
-            if let savedData = UserDefaults.standard.data(forKey: favoritesKey) {
-                do {
-                    favoriteSessions = try JSONDecoder().decode([NatureWalkSession].self, from: savedData)
-                } catch {
-                    print("Erro ao carregar favoritos: \(error)")
-                }
-            }
+    // Removes all favorites
+    func removeAllFavorites() {
+        print("Removing all favorites for user: \(username)")
+        favoriteSessions.removeAll()
+        saveFavorites()
+    }
+
+    // Generates the unique key to save the user's favorites
+    private func favoritesKey() -> String {
+        return "favoriteSessions_\(username)"
+    }
+
+    // Saves the current user's favorites to UserDefaults
+    private func saveFavorites() {
+        guard !username.isEmpty else {
+            print("Error saving favorites: username is empty")
+            return
         }
+        do {
+            let encoded = try JSONEncoder().encode(favoriteSessions)
+            UserDefaults.standard.set(encoded, forKey: favoritesKey())
+            print("Favorites saved for \(username)")
+        } catch {
+            print("Error saving favorites: \(error)")
+        }
+    }
+
+    // Loads the current user's favorites from UserDefaults
+    private func loadFavorites() {
+        guard !username.isEmpty else {
+            print("No favorites found: username is empty")
+            favoriteSessions = []
+            return
+        }
+        if let savedData = UserDefaults.standard.data(forKey: favoritesKey()) {
+            do {
+                favoriteSessions = try JSONDecoder().decode([NatureWalkSession].self, from: savedData)
+                print("Favorites loaded for \(username): \(favoriteSessions.count) items")
+            } catch {
+                print("Error loading favorites: \(error)")
+            }
+        } else {
+            print("No favorites found for \(username)")
+            favoriteSessions = []
+        }
+    }
 }

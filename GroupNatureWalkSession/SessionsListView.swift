@@ -1,42 +1,28 @@
 import SwiftUI
 
 struct SessionsListView: View {
-    @EnvironmentObject var sessionStore: NatureWalkSessions
-     var username: String
+    @EnvironmentObject var sessionStore: NatureWalkSessions  
+    var username: String
 
     var body: some View {
-
         ZStack {
             Color.gray.opacity(0.6).edgesIgnoringSafeArea(.all)
             List(sessionStore.sessions) { session in
-                
                 NavigationLink {
                     SessionDetailsView(session: session)
                 } label: {
                     SessionRowView(session: session)
                 }
-
                 .listRowBackground(Color.clear)
-                
             }
-            
-            //            .listStyle(PlainListStyle())
-            //                    .background(
-            //                        Image("nature7")
-            //                            .resizable()
-            //                            .aspectRatio(contentMode: .fill)
-            //                            .edgesIgnoringSafeArea(.all)
-            //                    )
-            
             .listStyle(PlainListStyle())
             .background(Color.clear)
             .scrollContentBackground(.hidden)
-            
             .navigationTitle("Nature Walk Sessions")
         }
     }
-        
 }
+
 
 //struct SessionsListView_Previews: PreviewProvider {
 //    static var previews: some View {
