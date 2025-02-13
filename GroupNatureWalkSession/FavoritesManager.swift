@@ -28,6 +28,13 @@ class FavoritesManager: ObservableObject {
         return favoriteSessions.contains { $0.id == session.id }
     }
 
+    // Remove favorite
+    func removeFavorite(at offsets: IndexSet) {
+        print("Remove favorite for user: \(username)")
+        favoriteSessions.remove(atOffsets: offsets)
+        saveFavorites()
+    }
+    
     // Removes all favorites
     func removeAllFavorites() {
         print("Removing all favorites for user: \(username)")

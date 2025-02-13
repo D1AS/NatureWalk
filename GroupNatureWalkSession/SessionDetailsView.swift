@@ -8,8 +8,6 @@ struct SessionDetailsView: View {
     var body: some View {
         
         ZStack {
-            Color.gray.opacity(0.6).edgesIgnoringSafeArea(.all)
-            
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     

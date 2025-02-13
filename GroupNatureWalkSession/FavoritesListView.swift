@@ -2,7 +2,6 @@ import SwiftUI
 
 struct FavoritesListView: View {
     @EnvironmentObject var favoritesManager: FavoritesManager
-     var username: String
     
     var body: some View {
         NavigationStack {
@@ -40,7 +39,7 @@ struct FavoritesListView: View {
     
     //Removes a favorite from the list
     func removeFavorite(at offsets: IndexSet) {
-        favoritesManager.favoriteSessions.remove(atOffsets: offsets)
+        favoritesManager.removeFavorite(at: offsets)
     }
     
     //Removes all favorites

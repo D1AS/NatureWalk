@@ -1,12 +1,10 @@
 import SwiftUI
 
 struct SessionsListView: View {
-    @EnvironmentObject var sessionStore: NatureWalkSessions  
-    var username: String
+    @EnvironmentObject var sessionStore: NatureWalkSessions
 
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.6).edgesIgnoringSafeArea(.all)
             List(sessionStore.sessions) { session in
                 NavigationLink {
                     SessionDetailsView(session: session)
@@ -22,14 +20,6 @@ struct SessionsListView: View {
         }
     }
 }
-
-
-//struct SessionsListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SessionsListView()
-//    }
-//}
-
 
 struct SessionRowView: View {
     let session: NatureWalkSession

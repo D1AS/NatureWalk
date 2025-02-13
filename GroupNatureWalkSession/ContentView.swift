@@ -15,14 +15,14 @@ struct ContentView: View {
             if isLoggedIn {
                 TabView {
                     NavigationView {
-                        SessionsListView(username: username)
+                        SessionsListView()
                     }
                     .tabItem {
                         Label("Sessions", systemImage: "list.bullet")
                     }
 
                     NavigationView {
-                        FavoritesListView(username: username)
+                        FavoritesListView()
                     }
                     .tabItem {
                         Label("Favorites", systemImage: "heart.fill")
@@ -76,7 +76,6 @@ struct ContentView: View {
         }
         .environmentObject(sessionStore)
         .environmentObject(favoritesManager)
-        .environmentObject(userManager)
     }
 
     private func logoutUser() {
